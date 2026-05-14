@@ -87,7 +87,7 @@ function PackageBlock({
           <div className="relative">
             <div className="pkg-ghost">{num}</div>
             <span className="pkg-badge"><span className="dot" />{badge}</span>
-            <h3 className="pkg-name" style={variant === "scale" ? { color: "#fff" } : undefined}>{name}</h3>
+            <h3 className="pkg-name" style={{ whiteSpace: "pre-line", ...(variant === "scale" ? { color: "#fff" } : {}) }}>{name}</h3>
             <div className="pkg-price">{price}</div>
             <p className="pkg-note">{note}</p>
             <p className="pkg-desc">{desc}</p>
