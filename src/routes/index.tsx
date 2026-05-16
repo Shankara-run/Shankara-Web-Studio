@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
 import { Nav } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
 import logo from "@/assets/logo.png";
+import movVideo from "@/assets/Withemoticon_safari.mov";
+import webmVideo from "@/assets/Withemoticon.webm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -139,30 +142,45 @@ const pricing = [
 ];
 
 function Index() {
+  const [isApple, setIsApple] = useState(false);
+
+  useEffect(() => {
+    setIsApple(/iPad|iPhone|iPod|Macintosh|Mac OS/.test(navigator.userAgent));
+  }, []);
+
   return (
     <div id="top">
       <Nav />
 
       {/* HERO */}
       <header className="hero hero-wrap">
-        <div className="relative z-10">
-          <div className="eyebrow animate-rise" style={{ animationDelay: ".1s" }}>Web Design Studio · Chennai</div>
-          <h1 className="animate-rise" style={{ animationDelay: ".25s" }}>
-            Your business
-            <em>deserves to be online.</em>
-          </h1>
-          <p className="hero-body animate-rise" style={{ animationDelay: ".4s" }}>
-            Shankara designs and ships interactive websites that work as hard as you do — with honest pricing, a one-year warranty, and a 10-day delivery promise.
-          </p>
-          <div className="flex flex-wrap gap-3 mb-10 animate-rise" style={{ animationDelay: ".55s" }}>
-            <a href="#packages" className="btn-fill">See packages →</a>
-            <a href="#process" className="btn-outline">How we work</a>
+        <div className="hero-inner">
+          <div className="hero-content">
+            <div className="eyebrow animate-rise" style={{ animationDelay: ".1s" }}>Web Design Studio · Chennai</div>
+            <h1 className="animate-rise" style={{ animationDelay: ".25s" }}>
+              Your business
+              <em>deserves to be online.</em>
+            </h1>
+            <p className="hero-body animate-rise" style={{ animationDelay: ".4s" }}>
+              Shankara designs and ships interactive websites that work as hard as you do — with honest pricing, a one-year warranty, and a 10-day delivery promise.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-10 animate-rise" style={{ animationDelay: ".55s" }}>
+              <a href="#packages" className="btn-fill">See packages →</a>
+              <a href="#process" className="btn-outline">How we work</a>
+            </div>
+            <div className="flex flex-wrap gap-2 animate-rise" style={{ animationDelay: ".7s" }}>
+              <span className="pill">Websites that work as hard as you do</span>
+              <span className="pill">10-day delivery</span>
+              <span className="pill">One-year warranty</span>
+              <span className="pill">Honest pricing</span>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2 animate-rise" style={{ animationDelay: ".7s" }}>
-            <span className="pill">Websites that work as hard as you do</span>
-            <span className="pill">10-day delivery</span>
-            <span className="pill">One-year warranty</span>
-            <span className="pill">Honest pricing</span>
+          <div className="hero-media animate-rise" style={{ animationDelay: ".4s" }}>
+            {isApple ? (
+              <video src={movVideo} autoPlay loop muted playsInline />
+            ) : (
+              <video src={webmVideo} autoPlay loop muted playsInline />
+            )}
           </div>
         </div>
       </header>

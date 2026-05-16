@@ -12,8 +12,8 @@ export function Nav() {
   return (
     <nav className={`nav-shell ${scrolled ? "scrolled" : ""}`}>
       <a href="#top" className="flex items-center gap-2.5 no-underline">
-        <img src={logo} alt="Shankara" className="w-11 h-7 object-contain" />
-        <span className="font-serif text-xl font-semibold tracking-wide text-black">Shankara</span>
+        <img src={logo} alt="Shankara" className="nav-brand-logo w-11 h-7 object-contain" />
+        <span className="nav-brand font-heading text-xl font-semibold tracking-wide">Shankara</span>
       </a>
       <ul className="flex items-center gap-9 list-none m-0 p-0">
         <li className="hidden md:block"><a href="#process" className="nav-link">Process</a></li>
