@@ -264,7 +264,7 @@ function Index() {
       <footer className="site-footer">
         <div className="flex items-center justify-center gap-2.5 mb-3">
           <img src={logo} alt="Shankara" className="w-9 h-6 object-contain opacity-80" />
-          <span className="font-serif text-xl font-semibold" style={{ color: "rgba(255,255,255,.85)" }}>Shankara</span>
+            <span className="font-heading text-xl font-semibold" style={{ color: "rgba(255,255,255,.85)" }}>Shankara</span>
         </div>
         <p className="text-sm font-light mb-5">Websites that work as hard as you do.</p>
         <div className="flex justify-center gap-8 mb-5">

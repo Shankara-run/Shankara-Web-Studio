@@ -1,7 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Lato:wght@300;400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -64,12 +64,11 @@
 
 :root {
   --radius: 0.625rem;
-  --brand: #3e6e9e;
-  --brand-dark: #2d5580;
-  --brand-deep: #1c3a55;
-  --brand-light: #e8f0f8;
-  --brand-mid: #b5cfe4;
-  --ink: #0a0a0a;
+  --brand: #3E6E9E;
+  --brand-dark: #2D5580;
+  --brand-light: #E8F0F8;
+  --brand-mid: #B5CFE4;
+  --ink: #1A1A1A;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -151,17 +150,18 @@
 }
 
 /* === Shankara site === */
-.font-serif { font-family: 'Cormorant Garamond', serif; }
-.font-sans { font-family: 'Outfit', sans-serif; }
-.font-heading { font-family: 'Cormorant Garamond', serif; }
+.font-heading { font-family: 'Raleway', sans-serif; }
+.font-body { font-family: 'Lato', sans-serif; }
 .nav-brand-logo { width: 2.75rem; height: 1.75rem; object-fit: contain; }
-.nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.025em; }
+.nav-brand { font-family: 'Raleway', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.025em; }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Lato', sans-serif;
   background: #ffffff;
   color: var(--ink);
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 @keyframes riseUp {
@@ -190,11 +190,19 @@ body {
   display:inline-flex; align-items:center; gap:8px;
   background: transparent; color: var(--ink);
   padding:.85rem 1.85rem; border-radius:50px;
-  font-size:.9rem; font-weight:400; text-decoration:none;
+  font-size:.9rem; font-weight:500; text-decoration:none;
   border: 1px solid rgba(0,0,0,.18);
   transition: all .2s;
 }
 .btn-outline:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+.hero .btn-fill {
+  background: #fff; color: var(--brand); box-shadow: 0 8px 24px -8px rgba(0,0,0,.15);
+}
+.hero .btn-fill:hover { background: rgba(255,255,255,.88); color: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 12px 32px -10px rgba(0,0,0,.2); }
+.hero .btn-outline {
+  border-color: rgba(255,255,255,.3); color: #fff;
+}
+.hero .btn-outline:hover { border-color: #fff; color: #fff; }
 
 
 /* nav */
@@ -209,11 +217,15 @@ body {
   backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 rgba(62,110,158,.13);
 }
+.nav-shell:not(.scrolled) .nav-link { color: rgba(255,255,255,.85); }
+.nav-shell:not(.scrolled) .nav-link:hover { color: #fff; }
+.nav-shell:not(.scrolled) .nav-brand { color: #fff; }
+.nav-shell.scrolled .nav-link { color: var(--ink); font-weight:500; letter-spacing:.04em; }
+.nav-shell.scrolled .nav-link:hover { color: var(--brand); }
 .nav-link {
-  font-size:.82rem; font-weight:400; letter-spacing:.04em;
-  color:#4e627a; text-decoration:none; transition: color .2s;
+  font-size:.82rem; font-weight:500; letter-spacing:.04em;
+  text-decoration:none; transition: color .2s;
 }
-.nav-link:hover { color: var(--brand); }
 .nav-pill {
   background: var(--brand); color:#fff !important;
   padding:.5rem 1.25rem; border-radius:50px; font-weight:500;
@@ -223,17 +235,17 @@ body {
 
 /* sections */
 .section-tag {
-  font-size:.72rem; font-weight:500; letter-spacing:.13em;
+  font-size:.72rem; font-weight:600; letter-spacing:.13em;
   text-transform:uppercase; color: var(--brand); margin-bottom:.75rem;
   display:inline-block;
 }
 .section-headline {
-  font-family:'Cormorant Garamond',serif;
-  font-size: clamp(2rem,3.8vw,3.2rem); font-weight:700; line-height:1.15;
+  font-family:'Raleway',sans-serif;
+  font-size: clamp(2rem,3.8vw,3.2rem); font-weight:600; line-height:1.15;
   color: var(--ink); margin-bottom:.75rem;
 }
 .section-sub {
-  font-size:.97rem; font-weight:300; color:#4e627a;
+  font-size:.97rem; font-weight:400; color: var(--ink);
   line-height:1.75; max-width:560px;
 }
 
@@ -261,10 +273,10 @@ body {
   display:flex; align-items:center; justify-content:center;
   margin-bottom: 1.1rem; color: var(--brand);
 }
-.pcard h3 { font-size:1rem; font-weight:600; margin-bottom:.7rem; color: var(--ink); }
+.pcard h3 { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:600; margin-bottom:.7rem; color: var(--ink); }
 .pcard ul { list-style:none; padding:0; margin:0; }
 .pcard li {
-  font-size:.85rem; font-weight:300; color:#4e627a;
+  font-size:.85rem; font-weight:400; color: var(--ink);
   padding:.3rem 0 .3rem 1.1rem; position:relative; line-height:1.55;
 }
 .pcard li::before { content:'→'; position:absolute; left:0; top:.32rem; color: var(--brand); font-size:.72rem; }
@@ -272,7 +284,7 @@ body {
 /* pricing cards */
 .price-section {
   padding: 6rem 5%;
-  background: #f4f7fb;
+  background: #F9FAFB;
 }
 .price-grid {
   display: grid;
@@ -325,7 +337,7 @@ body {
   line-height: 1.4;
 }
 .price-amount {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Raleway', sans-serif;
   font-size: clamp(2.6rem, 4vw, 3.6rem);
   font-weight: 700;
   color: var(--brand);
@@ -333,9 +345,9 @@ body {
   margin-bottom: 2rem;
 }
 .price-period {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #8097b0;
   margin-left: 4px;
 }
@@ -367,17 +379,17 @@ body {
 
 /* footer */
 .site-footer {
-  background:#0a0a0a; color: rgba(255,255,255,.4);
+  background: var(--brand); color: rgba(255,255,255,.7);
   padding: 3rem 5%; text-align:center;
 }
-.footer-link { font-size:.8rem; color: rgba(255,255,255,.35); text-decoration:none; transition: color .2s; }
-.footer-link:hover { color: rgba(255,255,255,.9); }
+.footer-link { font-size:.8rem; color: rgba(255,255,255,.55); text-decoration:none; transition: color .2s; }
+.footer-link:hover { color: #fff; }
 
 /* hero */
 .hero-wrap {
   min-height: 100vh;
   padding: 9rem 5% 5rem;
-  background: radial-gradient(circle at 20% 30%, #eaf1f9 0%, #f8fafd 50%, #e2ecf5 100%);
+  background: #3E6E9E;
   position: relative; overflow:hidden;
 }
 @media(max-width:1024px){
@@ -433,27 +445,27 @@ body {
 }
 .eyebrow {
   display:inline-flex; align-items:center; gap:10px;
-  font-size:.72rem; font-weight:500; letter-spacing:.13em; text-transform:uppercase;
-  color: var(--brand); margin-bottom:1.4rem;
+  font-size:.72rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
+  color: rgba(255,255,255,.6); margin-bottom:1.4rem;
 }
-.eyebrow::before { content:''; width:22px; height:1px; background: var(--brand); }
+.eyebrow::before { content:''; width:22px; height:1px; background: rgba(255,255,255,.4); }
 .hero h1 {
-  font-family:'Cormorant Garamond',serif;
+  font-family:'Raleway',sans-serif;
   font-size: clamp(3rem, 5.5vw, 5.4rem);
-  font-weight:700; line-height:1.04;
-  color: var(--ink); margin-bottom:1.4rem;
+  font-weight:800; line-height:1.04; letter-spacing:-0.025em;
+  color: #FFFFFF; margin-bottom:1.4rem;
 }
-.hero h1 em { font-style:italic; color: var(--brand); display:block; }
+.hero h1 em { font-style:italic; font-weight:700; color: #FFFFFF; display:block; }
 .hero-body {
   font-size: clamp(.95rem, 1.4vw, 1.08rem);
-  font-weight:300; color:#4e627a; line-height:1.78;
+  font-weight:400; color: rgba(255,255,255,.8); line-height:1.78;
   max-width:500px; margin-bottom:2.4rem;
 }
 .pill {
-  font-size:.76rem; font-weight:400; color:#4e627a;
+  font-size:.76rem; font-weight:400; color: rgba(255,255,255,.75);
   padding:.4rem 1rem; border-radius:50px;
-  border:1px solid rgba(62,110,158,.25);
-  background: rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.1);
 }
 
 /* scroll anim */
@@ -462,9 +474,9 @@ body {
 
 /* package */
 .pkg-section { padding: 6rem 5%; border-top: 1px solid rgba(62,110,158,.13); }
-.pkg-launch { background: #f4f7fb; }
+.pkg-launch { background: #F9FAFB; }
 .pkg-grow { background: #fff; }
-.pkg-scale { background: var(--brand-deep); color:#fff; }
+.pkg-scale { background: var(--brand); color:#fff; }
 
 .pkg-grid {
   display:grid; grid-template-columns:1fr 1.45fr; gap:5rem;
@@ -473,8 +485,8 @@ body {
 @media (max-width: 900px){ .pkg-grid{ grid-template-columns:1fr; gap:3rem; } }
 
 .pkg-ghost {
-  font-family:'Cormorant Garamond',serif;
-  font-size: 9rem; font-weight:700; line-height:1;
+  font-family:'Raleway',sans-serif;
+  font-size: 9rem; font-weight:800; line-height:1;
   color: var(--brand); opacity:.07;
   position:absolute; top:-3rem; left:-1.5rem; pointer-events:none;
 }
@@ -482,7 +494,7 @@ body {
 
 .pkg-badge {
   display:inline-flex; align-items:center; gap:6px;
-  font-size:.68rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase;
+  font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
   background: var(--brand-light); color: var(--brand);
   padding:.32rem .9rem; border-radius:50px; margin-bottom:1.2rem;
 }
@@ -491,19 +503,19 @@ body {
 .pkg-scale .pkg-badge .dot{ background: rgba(255,255,255,.6); }
 
 .pkg-name {
-  font-family:'Cormorant Garamond',serif;
+  font-family:'Raleway',sans-serif;
   font-size: clamp(1.7rem, 3vw, 2.5rem);
-  font-weight:700; line-height:1.18; margin-bottom:.4rem;
+  font-weight:600; line-height:1.18; margin-bottom:.4rem;
 }
 .pkg-price {
-  font-family:'Cormorant Garamond',serif;
+  font-family:'Raleway',sans-serif;
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight:700; color: var(--brand); margin:.7rem 0 .25rem;
 }
 .pkg-scale .pkg-price { color: rgba(255,255,255,.95); }
-.pkg-note { font-size:.84rem; color:#8097b0; margin-bottom:1.3rem; }
+.pkg-note { font-size:.84rem; color: var(--ink); opacity:.55; margin-bottom:1.3rem; }
 .pkg-scale .pkg-note { color: rgba(255,255,255,.5); }
-.pkg-desc { font-size:.95rem; font-weight:300; color:#4e627a; line-height:1.75; max-width:330px; margin-bottom:2rem; }
+.pkg-desc { font-size:.95rem; font-weight:400; color: var(--ink); line-height:1.75; max-width:330px; margin-bottom:2rem; }
 .pkg-scale .pkg-desc { color: rgba(255,255,255,.65); }
 
 .feat-box {
@@ -512,8 +524,8 @@ body {
 }
 .pkg-scale .feat-box { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.12); }
 .feat-label {
-  font-size:.7rem; font-weight:500; letter-spacing:.11em; text-transform:uppercase;
-  color:#8097b0; margin-bottom:1rem;
+  font-size:.7rem; font-weight:600; letter-spacing:.11em; text-transform:uppercase;
+  color: var(--ink); opacity:.5; margin-bottom:1rem;
 }
 .pkg-scale .feat-label { color: rgba(255,255,255,.45); }
 .feat-list { display:grid; grid-template-columns:1fr 1fr; gap:.55rem; list-style:none; padding:0; margin:0; }
@@ -540,13 +552,13 @@ body {
   display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;
 }
 .pkg-scale .found-num { background: rgba(255,255,255,.16); }
-.found-content h5 { font-size:.92rem; font-weight:600; margin-bottom:.25rem; }
-.found-content p { font-size:.82rem; font-weight:300; color:#4e627a; line-height:1.6; }
+.found-content h5 { font-family:'Raleway',sans-serif; font-size:.92rem; font-weight:600; margin-bottom:.25rem; }
+.found-content p { font-size:.82rem; font-weight:400; color: var(--ink); line-height:1.6; }
 .pkg-scale .found-content p { color: rgba(255,255,255,.6); }
 
 .btn-ghost-light {
   display:inline-flex; align-items:center; gap:8px;
-  background:#fff; color: var(--brand-deep);
+  background:#fff; color: var(--brand);
   padding:.85rem 1.85rem; border-radius:50px;
   font-size:.9rem; font-weight:500; text-decoration:none;
   transition: all .2s;
