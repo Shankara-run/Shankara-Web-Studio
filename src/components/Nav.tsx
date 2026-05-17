@@ -18,7 +18,7 @@ export function Nav() {
       <ul className="flex items-center gap-9 list-none m-0 p-0">
         <li className="hidden md:block"><a href="#process" className="nav-link">Process</a></li>
         <li className="hidden md:block"><a href="#packages" className="nav-link">Packages</a></li>
-        <li><a href="#contact" className="nav-link nav-pill">Enquire Now</a></li>
+        <li><a href="#contact" className="nav-link nav-pill">Ask Shankara</a></li>
       </ul>
     </nav>
   );

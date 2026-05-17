@@ -72,14 +72,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Shankara — Web Design Studio, Chennai" },
+      { name: "description", content: "Shankara designs and ships interactive websites with honest pricing, a one-year warranty, and a 10-day delivery promise." },
+      { name: "author", content: "Shankara Web Studio" },
+      { property: "og:title", content: "Shankara — Web Design Studio, Chennai" },
+      { property: "og:description", content: "Websites that work as hard as you do. Online Presence, Fully Online, and Online Marketing packages." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@shankara_web" },
     ],
     links: [
       {
